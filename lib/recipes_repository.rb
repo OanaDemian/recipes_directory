@@ -1,4 +1,5 @@
-require 'recipe'
+require_relative './recipe'
+require_relative './database_connection'
 class RecipesRepository
 
   # Selecting all records
