@@ -60,16 +60,16 @@ Usually, the Model class name will be the capitalised table name (single instead
 
 ```ruby
 # EXAMPLE
-# Table name: students
+# Table name: recipes
 
 # Model class
-# (in lib/student.rb)
-class Student
+# (in lib/recipes.rb)
+class 
 end
 
 # Repository class
 # (in lib/student_repository.rb)
-class StudentRepository
+class RecipesRepository
 end
 ```
 
@@ -79,15 +79,15 @@ Define the attributes of your Model class. You can usually map the table columns
 
 ```ruby
 # EXAMPLE
-# Table name: students
+# Table name: recipes
 
 # Model class
-# (in lib/student.rb)
+# (in lib/recipes.rb)
 
 class Student
 
   # Replace the attributes by your own columns.
-  attr_accessor :id, :name, :cohort_name
+  attr_accessor :id, :names, :time, :rating
 end
 
 # The keyword attr_accessor is a special Ruby feature
@@ -109,29 +109,29 @@ Using comments, define the method signatures (arguments and return value) and wh
 
 ```ruby
 # EXAMPLE
-# Table name: students
+# Table name: recipes
 
 # Repository class
-# (in lib/student_repository.rb)
+# (in lib/recipes_repository.rb)
 
-class StudentRepository
+class RecipesRepository
 
   # Selecting all records
   # No arguments
   def all
     # Executes the SQL query:
-    # SELECT id, name, cohort_name FROM students;
+    # SELECT id, names, time, rating FROM students;
 
-    # Returns an array of Student objects.
+    # Returns an array of recipes objects.
   end
 
   # Gets a single record by its ID
   # One argument: the id (number)
   def find(id)
     # Executes the SQL query:
-    # SELECT id, name, cohort_name FROM students WHERE id = $1;
+    # SELECT id, names, time, rating FROM recipes WHERE id = $1;
 
-    # Returns a single Student object.
+    # Returns a single Recipes object.
   end
 
   # Add more methods below for each operation you'd like to implement.
