@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS "public"."recipes";
+
+CREATE SEQUENCE IF NOT EXISTS recipes_id_seq;
+
 CREATE TABLE recipes (
   id SERIAL PRIMARY KEY,
   names text,
